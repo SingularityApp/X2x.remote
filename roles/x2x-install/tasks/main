@@ -1,0 +1,6 @@
+---
+- name: Install x2x
+  apt:
+    pkg:
+    - x2x
+  become: true

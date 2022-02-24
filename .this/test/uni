@@ -1,0 +1,15 @@
+---
+- hosts: local
+  roles:
+  - role: x2x-install
+
+- hosts: remote
+  roles:
+  - role: x2x-install
+
+- hosts: local
+  vars:
+    # Set direction for remote's Display
+    direction: "west"
+  roles:
+  - role: connect

@@ -1,0 +1,17 @@
+---
+
+- name: Get IP
+  debug:
+    msg: "ip {{ hostvars[groups['remote'][0]]['ansible_default_ipv4']['address'] }}"
+
+- name: Get user
+  debug:
+    msg: "user {{ hostvars[groups['remote'][0]]['ansible_user'] }}"
+
+- name: sample Connection command
+  debug:
+    msg: "ssh -XC {{ hostvars[groups['remote'][0]]['ansible_user'] }}@{{ hostvars[groups['remote'][0]]['ansible_default_ipv4']['address'] }}  x2x -{{direction}} -to :0.0"
+
+
+# prime.
+# https://stackoverflow.com/questions/39819378/ansible-get-current-target-hosts-ip-address
